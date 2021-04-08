@@ -1,20 +1,12 @@
 # permutation
 Finding all possible permutations in which 'n' people can occupy 'r' seats
+
 #include<stdio.h>
-int fact(long int x)
-{
-	long int f=1,i;
-	for(i=1;i<=x;i++)
-		{
-			f=f*i;
-		}
-	return f;
-}
 
 int main()
 {
 	long int n,r,p,temp;
-	long int num,x;
+	long int num=1,x=1;
 	// Enter the number of seats
 	printf(“Enter the number of seats available : “);
 	scanf(“%ld”,&r);
@@ -28,8 +20,19 @@ int main()
 		n=r;
 		r=temp;
 	}
-	num=fact(n);
-	x=fact(n-r);
+	long int i;
+	for(i=1;i<=num;i++)
+		{
+			num=num*i;
+		}
+   
+	for(i=1;i<=n-r;i++)
+		{
+			x=x*i;
+		}
+
+
+	
 	p=num/x;
 	printf(“nNumber of ways people can be seated : “);
 	printf(“%ld”,p);
