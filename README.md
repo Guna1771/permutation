@@ -2,6 +2,7 @@
 Finding all possible permutations in which 'n' people can occupy 'r' seats
 
 #include<stdio.h>
+#include<conio.h>
 
 int main()
 {
